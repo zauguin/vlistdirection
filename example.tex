@@ -1,0 +1,21 @@
+% Adpted from https://tex.stackexchange.com/questions/566839/hbox-issue-in-rtl-context-vmode
+% Original version written by Tex.SX user Salim Bou under CC BY-SA 4.0
+
+\documentclass{article}
+\usepackage[showframe]{geometry}
+\usepackage{vlistdirection}
+
+\parindent0pt
+
+\begin{document}
+
+\pardirection 1 \textdirection 1 \vlistdirection 1
+
+Text text text text text text text text text text 
+
+\hbox{Text text text text text text text text text text}
+
+\pardirection 0 \textdirection 0 \vlistdirection 0
+
+\hbox{Text text text text text text text text text text}
+\end{document}

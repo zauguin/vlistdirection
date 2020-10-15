@@ -1,0 +1,13 @@
+\ProvidesPackage{vlistdirection}[2020-10-16 v0.0.1 A LuaTeX direction register for allowing ixed-ddirectionality vboxes]
+
+% First define an attribute to hold the direction.
+% The name must be the one querie in the corresponding Lua code
+\newattribute \vlist@direction@attribute
+% Then we can load the Lua module
+\directlua{require'vlistdirection'}
+
+% And finally provide a user friendly name
+\let\vlistdirection\vlist@direction@attribute
+
+% Of course, a package wouldn't be fun without messing with the output routine
+\expanded{\output{\vlist@direction@attribute-"7FFFFFFF \unexpanded\the\output}}
