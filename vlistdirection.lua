@@ -22,6 +22,7 @@ end
 local direct = node.direct
 
 local find_attribute = direct.find_attribute
+local set_attribute = direct.set_attribute
 local getnext = direct.getnext
 local getwidth = direct.getwidth
 local getshift = direct.getshift
@@ -126,6 +127,7 @@ luatexbase.add_to_callback('vpack_filter', function(head, _groupcode, _size, _pa
     -- elseif id == whatsit_t then
     --   warning'Not implemented'
     end
+    set_attribute(n, direction)
   end
   return true
 end, 'vlistdirection.apply')
